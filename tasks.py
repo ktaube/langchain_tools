@@ -37,6 +37,9 @@ tools = [
 ]
 
 secret = vault.get_secret("OpenAI")
+
+print("OpenAI secret: ", secret)
+
 llm = OpenAI(temperature=0, openai_api_key=secret["key"])
 
 # replace the default prompt template by overriding the agent's llm_chain.prompt.template
