@@ -15,7 +15,7 @@ from robocorp import vault
 from RPA.Assistant.types import WindowLocation, Size
 import RPA.Assistant
 
-ws_secret = vault.get_secret("ws")
+ws_secret = vault.get_secret("LangchainWS")
 openai_secret = vault.get_secret("OpenAI")
 
 llm = OpenAI(temperature=0, openai_api_key=openai_secret["key"])
@@ -78,7 +78,7 @@ def start_process(process_id: str):
 
     print('👀 this is data', data)
 
-    return f"Process started, run id: {data['id']}" 
+    return f"Process started, run id: {data['id']}"
 
 add_lead_tool = Tool(
     name="Add Lead Tool",
